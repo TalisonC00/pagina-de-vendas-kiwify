@@ -25,38 +25,55 @@
         .bg-gradient-btn:hover {
             background: linear-gradient(90deg, #3a7bd5 0%, #00d2ff 100%);
         }
+        /* Ajuste do player para vídeos verticais (Shorts/Reels) */
+        .video-container {
+            position: relative;
+            padding-bottom: 177.77%; /* Proporção 16:9 vertical */
+            height: 0;
+            overflow: hidden;
+            max-width: 400px; /* Limita a largura para não ficar gigante em telas grandes */
+            margin: 0 auto;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-cyan-500 selection:text-white">
 
     <!-- HERO SECTION (Header + VSL) -->
-    <header class="relative pt-20 pb-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+    <header class="relative pt-16 pb-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
             Multiplique Sua Presença nas Redes Sociais e Escale Seu Negócio <span class="text-gradient">Sem Precisar Gravar Uma Única Palavra.</span>
         </h1>
-        <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+        <p class="text-base md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
             O método prático para criar seu Clone Digital com Inteligência Artificial usando plataformas de mercado e gerar vendas todos os dias — mesmo que você morra de vergonha das câmeras ou não tenha tempo.
         </p>
         
-        <!-- VSL (Video Placeholder) -->
-        <div class="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-[0_0_40px_rgba(0,210,255,0.2)] border border-gray-800 bg-gray-900 aspect-video flex items-center justify-center mb-10">
-            <iframe class="w-full h-full absolute top-0 left-0" src="https://www.youtube.com/embed/7WFRug6o11M" title="Vídeo de Vendas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- VSL (Video Placeholder - Ajustado para formato Shorts) -->
+        <div class="video-container rounded-2xl shadow-[0_0_40px_rgba(0,210,255,0.2)] border-2 border-gray-800 bg-gray-900 mb-8">
+            <!-- Link do novo vídeo atualizado no formato correto -->
+            <iframe src="https://www.youtube.com/embed/olcYxLy82dA" title="Vídeo de Vendas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
-        <a href="https://pay.kiwify.com.br/6pXyxlH" target="_blank" class="inline-block bg-gradient-btn text-white font-bold text-xl py-4 px-10 rounded-full shadow-lg transform transition hover:scale-105 hover:shadow-[0_0_20px_rgba(0,210,255,0.5)]">
+        <a href="https://pay.kiwify.com.br/6pXyxlH" target="_blank" class="inline-block w-full sm:w-auto bg-gradient-btn text-white font-bold text-xl py-4 px-10 rounded-full shadow-lg transform transition hover:scale-105 hover:shadow-[0_0_20px_rgba(0,210,255,0.5)]">
             QUERO CRIAR MEU CLONE AGORA
         </a>
         
-        <!-- Aviso Kiwify com Cadeado -->
-        <div class="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-            <span>Ambiente 100% seguro. Pagamento e acesso pela <strong>Kiwify</strong></span>
+        <!-- Selo de Segurança Kiwify -->
+        <div class="mt-5 inline-flex items-center justify-center gap-2 text-sm text-gray-300 bg-gray-900/80 border border-gray-700/50 py-2 px-4 rounded-full shadow-sm">
+            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            <span>Ambiente 100% Seguro. Acesso via <span class="font-bold text-white">Kiwify</span></span>
         </div>
     </header>
 
     <!-- DESTAQUE BANNER -->
-    <section class="py-10 px-4">
-        <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,210,255,0.15)] border border-gray-800 hover:scale-[1.01] transition-transform duration-300">
+    <section class="py-6 px-4">
+        <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(0,210,255,0.1)] border border-gray-800">
             <img src="banner.jpeg" alt="Viralize e fature nas redes sociais" class="w-full h-auto object-cover">
         </div>
     </section>
@@ -65,18 +82,27 @@
     <section class="py-16 bg-gray-900/50 border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-10">O fim do maior gargalo do seu negócio</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-800/60 p-6 rounded-xl border border-gray-700 hover:border-cyan-500/30 transition-colors">
+                    <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
                     <h3 class="text-cyan-400 font-bold text-xl mb-3">Falta de Tempo</h3>
-                    <p class="text-gray-400">A rotina consome suas horas e não sobra tempo para montar cenário, gravar e editar vídeos.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">A rotina consome suas horas e não sobra tempo para montar cenário, gravar e editar vídeos.</p>
                 </div>
-                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                <div class="bg-gray-800/60 p-6 rounded-xl border border-gray-700 hover:border-cyan-500/30 transition-colors">
+                    <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path></svg>
+                    </div>
                     <h3 class="text-cyan-400 font-bold text-xl mb-3">Vergonha das Câmeras</h3>
-                    <p class="text-gray-400">O medo do julgamento e o bloqueio na hora de falar travam sua produção de conteúdo e suas vendas.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">O medo do julgamento e o bloqueio na hora de falar travam sua produção de conteúdo e suas vendas.</p>
                 </div>
-                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                <div class="bg-gray-800/60 p-6 rounded-xl border border-gray-700 hover:border-cyan-500/30 transition-colors">
+                    <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
                     <h3 class="text-cyan-400 font-bold text-xl mb-3">Sem Custos Elevados</h3>
-                    <p class="text-gray-400">Valores Fixos que não irão corroer sua margem de lucro.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Valores Fixos que não irão corroer sua margem de lucro com equipamentos ou produtoras caras.</p>
                 </div>
             </div>
         </div>
@@ -89,15 +115,15 @@
         
         <ul class="text-left max-w-2xl mx-auto space-y-4">
             <li class="flex items-start">
-                <svg class="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <svg class="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <span class="text-gray-300"><strong>Empreendedores:</strong> Que precisam escalar sua presença digital e gerar leads sem gastar horas gravando.</span>
             </li>
             <li class="flex items-start">
-                <svg class="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <svg class="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <span class="text-gray-300"><strong>Tímidos e Introvertidos:</strong> Que querem criar conteúdo magnético mantendo-se confortáveis nos bastidores.</span>
             </li>
             <li class="flex items-start">
-                <svg class="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <svg class="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 <span class="text-gray-300"><strong>Prestadores de Serviços:</strong> Que desejam oferecer a criação de Avatares como um serviço lucrativo.</span>
             </li>
         </ul>
@@ -106,10 +132,10 @@
     <!-- AUTORIDADE (IMAGEM REELS) -->
     <section class="py-16 bg-gray-900/50 border-y border-gray-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
-            <div class="md:w-1/3 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,210,255,0.15)] border border-gray-700 bg-gray-800 flex justify-center items-center">
+            <div class="md:w-1/3 w-2/3 mx-auto rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,210,255,0.15)] border border-gray-700 bg-gray-800 flex justify-center items-center">
                 <img src="reels.jpeg" alt="Talison Especialista em IA" class="w-full h-auto object-cover">
             </div>
-            <div class="md:w-2/3">
+            <div class="md:w-2/3 text-center md:text-left">
                 <h2 class="text-3xl font-bold mb-4">Conheça Talison, o Arquiteto do seu Clone</h2>
                 <p class="text-gray-400 mb-4 leading-relaxed">
                     Como desenvolvedor de software e estrategista à frente da <strong>Pretsia</strong>, construí minha carreira integrando modelos avançados de Inteligência Artificial e estruturando automações robustas.
@@ -125,54 +151,57 @@
     <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-10">O que você vai dominar:</h2>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-gray-900 border border-gray-800 p-6 rounded-lg hover:border-cyan-500/50 transition-colors">
+            <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(0,210,255,0.1)] transition-all">
                 <h4 class="text-xl font-bold text-cyan-400 mb-2">Módulo 1: Engenharia do Clone</h4>
-                <p class="text-gray-400">O passo a passo para gerar seu avatar com sincronia perfeita de imagem e voz usando plataformas de mercado.</p>
+                <p class="text-gray-400 text-sm">O passo a passo para gerar seu avatar com sincronia perfeita de imagem e voz usando plataformas de mercado.</p>
             </div>
-            <div class="bg-gray-900 border border-gray-800 p-6 rounded-lg hover:border-cyan-500/50 transition-colors">
+            <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(0,210,255,0.1)] transition-all">
                 <h4 class="text-xl font-bold text-cyan-400 mb-2">Módulo 2: Como Converter</h4>
-                <p class="text-gray-400">Como usar IA para escrever roteiros curtos, persuasivos e desenhados para vender e reter atenção.</p>
+                <p class="text-gray-400 text-sm">Como usar IA para escrever roteiros curtos, persuasivos e desenhados para vender e reter atenção.</p>
             </div>
-            <div class="bg-gray-900 border border-gray-800 p-6 rounded-lg hover:border-cyan-500/50 transition-colors">
+            <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(0,210,255,0.1)] transition-all">
                 <h4 class="text-xl font-bold text-cyan-400 mb-2">Módulo 3: Monetização</h4>
-                <p class="text-gray-400">Como transformar essas visualizações em receita previsível todos os dias.</p>
+                <p class="text-gray-400 text-sm">Como transformar essas visualizações em receita previsível todos os dias.</p>
             </div>
         </div>
     </section>
 
     <!-- OFERTA E CTA -->
-    <section class="py-20 text-center px-4">
-        <div class="max-w-3xl mx-auto bg-gray-900 border-2 border-cyan-500/50 rounded-2xl p-8 sm:p-12 shadow-[0_0_30px_rgba(0,210,255,0.15)]">
-            <h2 class="text-3xl font-bold mb-4">Um investimento menor que uma pizza.</h2>
-            <p class="text-gray-400 mb-8 text-lg">Pense no valor que você perde por não postar. Agora Pense em Multiplicar sua presença e lucrar com isso! Esse conhecimento valeria facilmente R$ 497,00.</p>
+    <section class="py-16 text-center px-4">
+        <div class="max-w-2xl mx-auto bg-gray-900 border-2 border-cyan-500/40 rounded-3xl p-8 sm:p-12 shadow-[0_0_40px_rgba(0,210,255,0.1)]">
+            <h2 class="text-3xl font-bold mb-4 text-white">Um investimento menor que uma pizza.</h2>
+            <p class="text-gray-400 mb-8 text-sm sm:text-base">Pense no valor que você perde por não postar. Agora pense em multiplicar sua presença e lucrar com isso! Esse conhecimento valeria facilmente R$ 497,00.</p>
             
-            <div class="mb-8">
-                <p class="text-gray-500 line-through text-xl">De R$ 497,00</p>
-                <p class="text-gray-300 mb-1">Por apenas</p>
-                <p class="text-6xl font-extrabold text-gradient">R$ 49,90</p>
-                <p class="text-gray-400 mt-2">Pagamento Único • Acesso Imediato</p>
+            <div class="mb-8 bg-gray-800/50 py-6 rounded-2xl border border-gray-700/50">
+                <p class="text-gray-500 line-through text-lg">De R$ 497,00</p>
+                <p class="text-gray-300 mb-1 text-sm uppercase tracking-wider">Por apenas</p>
+                <p class="text-6xl sm:text-7xl font-extrabold text-gradient">R$ 49,90</p>
+                <p class="text-cyan-400 mt-2 text-sm font-semibold">Pagamento Único • Acesso Imediato</p>
             </div>
 
-            <a href="https://pay.kiwify.com.br/6pXyxlH" target="_blank" class="block w-full sm:w-auto sm:inline-block bg-gradient-btn text-white font-bold text-xl py-4 px-12 rounded-full shadow-lg transform transition hover:scale-105 hover:shadow-[0_0_20px_rgba(0,210,255,0.5)]">
+            <a href="https://pay.kiwify.com.br/6pXyxlH" target="_blank" class="block w-full bg-gradient-btn text-white font-bold text-xl py-5 rounded-full shadow-lg transform transition hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(0,210,255,0.6)]">
                 QUERO MEU CLONE POR R$ 49,90
             </a>
             
-            <!-- Aviso Kiwify com Cadeado -->
-            <div class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-400">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                <span>Acesso imediato e curso 100% hospedado na <strong>Kiwify</strong></span>
+            <!-- Selo de Segurança Kiwify -->
+            <div class="mt-6 flex flex-col items-center justify-center gap-1 text-xs text-gray-500">
+                <div class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <span>Transação Criptografada e Segura</span>
+                </div>
+                <span>Hospedado e processado pela <strong class="text-gray-300">Kiwify</strong></span>
             </div>
         </div>
     </section>
 
     <!-- GARANTIA -->
     <section class="py-12 max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 mb-10 text-center md:text-left">
-        <div class="text-cyan-400">
-            <svg class="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        <div class="text-cyan-400 bg-gray-900 p-4 rounded-full border border-gray-800">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
         </div>
-        <div>
+        <div class="max-w-md">
             <h3 class="text-2xl font-bold mb-2">Risco Zero: 7 Dias de Garantia</h3>
-            <p class="text-gray-400">Se em 7 dias você achar que criar o seu Clone de IA não é para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+            <p class="text-gray-400 text-sm leading-relaxed">Se em 7 dias você achar que criar o seu Clone de IA não é para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
         </div>
     </section>
 
@@ -184,3 +213,4 @@
 
 </body>
 </html>
+
